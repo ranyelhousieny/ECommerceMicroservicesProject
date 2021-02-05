@@ -9,6 +9,15 @@ import java.util.List;
 
 public class UserDao {
 
+    public User getUser(Integer id){
+        for (User user : users){
+            if(user.getId() == id){
+                return user;
+            }
+        }
+        return null;
+    }
+
     private static List<User> users = new ArrayList<User>();
 
     static{
@@ -21,4 +30,6 @@ public class UserDao {
     public List<User> getUsers(){
         return users;
     }
+
+
 }
